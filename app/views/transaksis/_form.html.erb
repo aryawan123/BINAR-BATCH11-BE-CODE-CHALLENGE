@@ -1,0 +1,45 @@
+<%= form_with model: @transaksi, local: true do |form| %>
+  
+    <% if @transaksi.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@transaksi.errors.count, "error") %> prohibited
+        this tranksaksi from being saved:
+      </h2>
+      <ul>
+        <% @transaksi.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= form.label :Tanggal_transaksi %><br>
+    <%= form.date_field :tgl%>
+
+  </p>
+
+  <p>
+  <%= form.label :Qty_beli%><br>
+  <%= form.text_field :qty_beli  %>
+</p>
+
+
+
+    <p>
+    <%= form.label :nama_obat %><br>
+    <%= form.select :obat_id, Obat.all.map{ |a| [a.nama_obat, a.id] }%>
+    </p>
+
+    <p>
+    <%= form.label :nama_Konsumen %><br>
+    <%= form.select :penjualan_id, Penjualan.all.map{ |a| [a.nama_konsumen, a.id] }%>
+    </p>
+ 
+    
+  <p>
+    <%= form.submit %> 
+  </p>
+ 
+<% end %>

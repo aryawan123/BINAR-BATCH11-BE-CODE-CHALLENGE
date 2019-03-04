@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tgl: 2019-03-04
+  qty_beli: 1
+  obat: one
+  penjualan: one
+
+two:
+  tgl: 2019-03-04
+  qty_beli: 1
+  obat: two
+  penjualan: two

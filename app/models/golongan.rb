@@ -1,0 +1,2 @@
+class Golongan < ApplicationRecord
+end

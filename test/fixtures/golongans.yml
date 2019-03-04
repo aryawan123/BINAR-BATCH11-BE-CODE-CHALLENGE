@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  golongan_obat: MyString
+  lokasi: MyString
+
+two:
+  golongan_obat: MyString
+  lokasi: MyString

@@ -1,0 +1,30 @@
+<h1>Listing Transaksi Penjualan</h1>
+<%= link_to 'New Transaksi', new_transaksi_path %> 
+
+<table border=1>
+  <tr>
+ 
+    <th>Qty Beli</th>
+    <th>Nama Obat</th>
+    <th>total</th>
+
+    
+  </tr>
+ 
+  <% @transaksi.each do |transaksi| %>
+    <tr>
+      
+      <td><%= transaksi.qty_beli %></td>
+      <td><%= transaksi.obat.nama_obat %></td>
+     
+    </tr> 
+  <% end %>
+  
+  <td><%= @sum %></td>
+
+  
+
+  <%= link_to 'Laporan Penjualan', transaksis_path %>
+</table>
+
+ 

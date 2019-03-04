@@ -1,0 +1,26 @@
+<p>
+  <strong>Tanggal_transaksi:</strong>
+  <%= @transaksi.tgl%>
+</p>
+ 
+<p>
+  <strong>Qty_beli:</strong>
+  <%= @transaksi.qty_beli %>
+</p>
+ 
+<p>
+  <strong>Obat:</strong>
+  <%= @transaksi.obat.nama_obat %>
+</p>
+
+<p>
+  <strong>Jenis Obat:</strong>
+  <%= @transaksi.obat.golongan.golongan_obat %>
+</p>
+
+<p>
+  <strong>Nama_konsumen:</strong>
+  <%= @transaksi.penjualan.nama_konsumen %>
+</p>
+
+<%= link_to 'Back', transaksis_path %>

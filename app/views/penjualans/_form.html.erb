@@ -1,0 +1,16 @@
+<%= form_with model: @penjualan, local: true do |form| %>
+    <p>  
+    <%= form.label :nama_konsumen %><br>
+    <%= form.text_field :nama_konsumen %>
+  </p>
+ 
+  <p>
+    <%= form.label :no_hp %><br>
+    <%= form.text_field :no_hp %>
+  </p>
+
+  <p>
+    <%= form.submit %> 
+  </p>
+ 
+<% end %>

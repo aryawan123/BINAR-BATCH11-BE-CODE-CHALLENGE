@@ -1,0 +1,16 @@
+<%= form_with model: @golongan, local: true do |form| %>
+    <p>  
+    <%= form.label :nama_golongan %><br>
+    <%= form.text_field :golongan_obat %>
+  </p>
+ 
+  <p>
+    <%= form.label :lokasi %><br>
+    <%= form.text_field :lokasi %>
+  </p>
+
+  <p>
+    <%= form.submit %> 
+  </p>
+ 
+<% end %>

@@ -1,0 +1,24 @@
+<h1>Listing Obat</h1>
+<%= link_to 'New Obat', new_obat_path %>
+<table border=1>
+  <tr>
+    <th>Nama_obat</th>
+    <th>qty</th>
+    <th>harga_satuan</th>
+    <th colspan="3"></th>
+  </tr>
+  
+  <% @obat.each do |obat| %>
+    <tr>
+      <td><%= obat.nama_obat %></td>
+      <td><%= obat.qty %></td>
+      <td><%= obat.harga %></td>
+      <td><%= link_to 'Show', obats_path(obat) %></td>
+      <td><%= link_to 'Edit', edit_obat_path(obat) %></td>
+      <td><%= link_to 'Destroy', obat_path(obat),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+ 

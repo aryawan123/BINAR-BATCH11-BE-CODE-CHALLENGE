@@ -1,0 +1,22 @@
+<h1>Listing Penjualan</h1>
+<%= link_to 'New Penjualan', new_penjualan_path %>
+<table border=1>
+  <tr>
+    <th>Nama_konsumen</th>
+    <th>no_hp</th>
+    <th colspan="3"></th>
+  </tr>
+  
+  <% @penjualan.each do |penjualan| %>
+    <tr>
+      <td><%= penjualan.nama_konsumen %></td>
+      <td><%= penjualan.no_hp %></td>
+      <td><%= link_to 'Show', penjualans_path(penjualan) %></td>
+      <td><%= link_to 'Edit', edit_penjualan_path(penjualan) %></td>
+      <td><%= link_to 'Destroy', penjualan_path(penjualan),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+ 

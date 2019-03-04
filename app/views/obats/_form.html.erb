@@ -1,0 +1,27 @@
+<%= form_with model: @obat, local: true do |form| %>
+    <p>
+    <%= form.label :nama_obat %><br>
+    <%= form.text_field :nama_obat %>
+  </p>
+ 
+  <p>
+    <%= form.label :qty %><br>
+    <%= form.text_field :qty %>
+  </p>
+
+  <p>
+  <%= form.label :harga %><br>
+  <%= form.text_field :harga %>
+</p>
+
+
+    <p>
+    <%= form.label :golongan_obat %><br>
+    <%= form.select :golongan_id, Golongan.all.map{ |a| [a.golongan_obat, a.id] }%>
+    </p>
+ 
+  <p>
+    <%= form.submit %> 
+  </p>
+ 
+<% end %>

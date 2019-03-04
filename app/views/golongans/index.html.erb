@@ -1,0 +1,22 @@
+<h1>Listing Golongan</h1>
+<%= link_to 'New Golongan', new_golongan_path %>
+<table border=1>
+  <tr>
+    <th>Nama_golongan</th>
+    <th>Lokasi</th>
+    <th colspan="3"></th>
+  </tr>
+ 
+  <% @golongan.each do |golongan| %>
+    <tr>
+      <td><%= golongan.golongan_obat %></td>
+      <td><%= golongan.lokasi %></td>
+      <td><%= link_to 'Show', golongans_path(golongan) %></td>
+      <td><%= link_to 'Edit', edit_golongan_path(golongan) %></td>
+      <td><%= link_to 'Destroy', golongan_path(golongan),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+ 
