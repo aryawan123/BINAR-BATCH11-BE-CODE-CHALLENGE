@@ -67,15 +67,15 @@ class TransaksisController < ApplicationController
         @transaksi2 = Transaksi.find(params[:id])
         @obat = Transaksi.where(id: @transaksi).select(:obat_id)
         harga = Obat.where(id: @obat).select(:harga)
-        qty = Transaksi.where(id: @transaksi).select(:qty_beli)
-        p ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;"
-        p @transaksi
-        p @transaksi2
-        p @obat
-        p harga
-        p qty
+        @qty = Transaksi.where(id: @transaksi).select(:qty_beli)
+        # p ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;"
+        # p @transaksi
+        # p @transaksi2
+        # p @obat
+        # p harga
+        # p qty
          
-         @total = harga.harga * qty
+         @total = harga.harga * @qty
          p @total
 
          # @transaksi = Transaksi.find_by(id = params[:id])
