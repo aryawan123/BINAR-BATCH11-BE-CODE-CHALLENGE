@@ -1,0 +1,23 @@
+<h1>Harga Obat</h1>
+<%= link_to 'Back', transaksis_path %>
+
+<table border=1>
+  <tr>
+  <th>Id Ttras</th>
+    <th>Id Obat</th>  
+  <th>Nama Obat</th>
+    <th>Qty Beli</th>
+    <th>Harga</th>
+    
+   
+  </tr>
+ 
+  <tr>
+    <td><%=@transaksi2.id%></td>
+    <td><%=@transaksi2.obat_id%></td>
+    <td><%=@transaksi2.obat.nama_obat%></td>
+    <td><%=@qty%></td>
+  </tr>
+
+
+</table>

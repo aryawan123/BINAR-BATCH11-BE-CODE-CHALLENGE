@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   resources :golongans
   resources :penjualans
   get 'lap', to: 'transaksis#lap_penjualan'
+  get '/transaksis/:id/harga', to: 'transaksis#harga', as: 'harga'
   resources :obats
-  resources :transaksis
+  resources :transaksis 
 
 end
 

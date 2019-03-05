@@ -12,6 +12,13 @@ class TransaksisController < ApplicationController
     end
 
     def create
+        
+        # obat = Obat.find_by(id = params[:obat_id])
+        # @transaksi = Transaksi.new(params_trans)
+        # obat.qty = obat.qty - qty_beli
+        # @transaksi.save
+        # obat.save
+        
         @transaksi = Transaksi.new(params_trans)
 
         if @transaksi.save
@@ -42,9 +49,8 @@ class TransaksisController < ApplicationController
 
     def lap_penjualan
         @transaksi = Transaksi.all
-        @sum = Transaksi.find_by(tgl: '04-03-2019').qty_beli
+        @sum = Transaksi.sum('qty_beli')
         
-
         # @sum = Transaksi.select(" sum(qty_beli) as total_beli")
 
         # records_array = ActiveRecord::Base.connection.execute('select sum(qty_beli) from transaksis')
@@ -54,6 +60,26 @@ class TransaksisController < ApplicationController
 
         # @sum = Transaksi.sum('qty_beli')
         # @transaksi = Transaksi.sum(:qty_beli, :group =>'obat_id')
+    end
+
+    def harga
+        @transaksi = Transaksi.select(:id).find(params[:id])
+        @transaksi2 = Transaksi.find(params[:id])
+        @obat = Transaksi.where(id: @transaksi).select(:obat_id)
+        harga = Obat.where(id: @obat).select(:harga)
+        qty = Transaksi.where(id: @transaksi).select(:qty_beli)
+        p ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;"
+        p @transaksi
+        p @transaksi2
+        p @obat
+        p harga
+        p qty
+         
+         @total = harga.harga * qty
+         p @total
+
+         # @transaksi = Transaksi.find_by(id = params[:id])
+        # @obat = Obat.find_by(id = params[:obat_id])
     end
 
     private 

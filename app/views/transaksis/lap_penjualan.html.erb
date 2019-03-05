@@ -1,30 +1,28 @@
-<h1>Listing Transaksi Penjualan</h1>
-<%= link_to 'New Transaksi', new_transaksi_path %> 
+<h1>Laporan Qty Keseluruhan Yang Terjual</h1>
+<%= link_to 'Back', transaksis_path %>
 
 <table border=1>
   <tr>
- 
-    <th>Qty Beli</th>
     <th>Nama Obat</th>
-    <th>total</th>
+    <th>Qty Beli</th>
+   
 
-    
   </tr>
  
   <% @transaksi.each do |transaksi| %>
     <tr>
-      
+    <td><%= transaksi.obat.nama_obat %></td>
       <td><%= transaksi.qty_beli %></td>
-      <td><%= transaksi.obat.nama_obat %></td>
+    
      
     </tr> 
   <% end %>
-  
-  <td><%= @sum %></td>
+  <tr>
+    <td><strong>total qty seleruhan obat yang terjual</strong></td>
+    <td><%= @sum %></td>
+  </tr>
 
-  
 
-  <%= link_to 'Laporan Penjualan', transaksis_path %>
 </table>
 
  

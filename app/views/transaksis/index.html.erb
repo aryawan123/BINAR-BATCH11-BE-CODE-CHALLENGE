@@ -8,6 +8,7 @@
     <th>Nama Obat</th>
     <th>Golongan Obat</th>
     <th>Nama Konsumen</th>
+    <th>Laporan Harga</th>
     
     <th colspan="3">Action</th>
   </tr>
@@ -20,6 +21,7 @@
       <td><%= transaksi.obat.nama_obat %></td>
       <td><%= transaksi.obat.golongan.golongan_obat %></td>
       <td><%= transaksi.penjualan.nama_konsumen %></td>
+      <td><%= link_to 'Harga', harga_path(transaksi)%></td>
       <td><%= link_to 'Show', transaksis_path(transaksi) %></td>
       <td><%= link_to 'Edit', edit_transaksi_path(transaksi) %></td>
       <td><%= link_to 'Destroy', transaksi_path(transaksi),
@@ -27,7 +29,7 @@
               data: { confirm: 'Are you sure?' } %></td>
     </tr> 
   <% end %>
-  <%= link_to 'Laporan Penjualan', transaksis_path %>
+  <%= link_to 'Laporan Total QTY Penjualan', lap_path %>
 </table>
 
  
